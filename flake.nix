@@ -19,7 +19,7 @@
         );
 
       mkBramble =
-        { pkgs }:
+        pkgs:
         pkgs.stdenv.mkDerivation {
           pname = "bramble";
           version = "unstable-2026-02-04";
@@ -52,7 +52,7 @@
         };
 
       mkBcompile =
-        { pkgs }:
+        pkgs:
         let
           linkerScript = pkgs.writeText "linker.ld" ''
              /* Linker Script for Bramble RP2040 Emulator
